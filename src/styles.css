@@ -1,0 +1,8 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Checkout.is-desktop .Header-companyName {
+  white-space: normal;
+}
