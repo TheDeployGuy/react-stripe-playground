@@ -7,9 +7,16 @@ import "./styles.css";
 
 function App() {
   const [name, setName] = useState("");
+  const [team, setTeam] = useState("");
   const [amount, setAmount] = useState(0);
+
+  function resetFields() {
+    setAmount(10);
+    setTeam("");
+    setName("");
+  }
   return (
-    <div className="App">
+    <form className="App">
       <h1>Player Registration Form</h1>
 
       <fieldset>
@@ -21,12 +28,19 @@ function App() {
             value={name}
             token={12345}
             onChange={e => setName(e.target.value)}
+            required
           />
         </div>
 
         <div className="form__control">
           <label>Player Team</label>
-          <input type="text" placeholder="Enter Players Team" />
+          <input
+            type="text"
+            placeholder="Enter Players Team"
+            value={team}
+            onChange={e => setTeam(e.target.value)}
+            required
+          />
         </div>
 
         <div className="form__control">
@@ -34,10 +48,12 @@ function App() {
           <input
             type="number"
             value={amount}
-            pl
+            min={10}
             onChange={e => setAmount(e.target.value)}
           />
         </div>
+
+        <button onClick={resetFields}>Reset</button>
 
         <StripeCheckout
           name={`Membership Payment for ${name}`}
@@ -46,7 +62,7 @@ function App() {
           amount={amount * 100}
         />
       </fieldset>
-    </div>
+    </form>
   );
 }
 
