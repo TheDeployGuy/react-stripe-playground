@@ -10,35 +10,35 @@ function App() {
   const [amount, setAmount] = useState(0);
   return (
     <div className="App">
-      <h1>Stripe Playground</h1>
+      <h1>Player Registration Form</h1>
 
       <fieldset>
-        <label>
-          Player Name:
+        <div className="form__control">
+          <label>Player Name</label>
           <input
             type="text"
+            placeholder="Enter Player Name"
             value={name}
             token={12345}
             onChange={e => setName(e.target.value)}
           />
-        </label>
-        <br />
-        <label>
-          Players Team:
-          <input type="text" />
-        </label>
+        </div>
 
-        <br />
-        <label>
-          Amount to Payment
+        <div className="form__control">
+          <label>Player Team</label>
+          <input type="text" placeholder="Enter Players Team" />
+        </div>
+
+        <div className="form__control">
+          <label>Payment Amount</label>
           <input
             type="number"
             value={amount}
+            pl
             onChange={e => setAmount(e.target.value)}
           />
-        </label>
+        </div>
 
-        <br />
         <StripeCheckout
           name={`Membership Payment for ${name}`}
           image={logo}

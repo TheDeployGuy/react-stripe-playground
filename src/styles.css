@@ -1,8 +1,27 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+fieldset {
+  border: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
-.Checkout.is-desktop .Header-companyName {
-  white-space: normal;
+.form__control {
+  margin-bottom: 0.5em;
+}
+
+label {
+  /* inline-block needed for width */
+  display: inline-block;
+  width: 10em;
+  /* text-align: right; */
+}
+
+input {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
