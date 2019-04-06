@@ -53,7 +53,9 @@ function App() {
           />
         </div>
 
-        <button onClick={resetFields}>Reset</button>
+        <button type="button" onClick={resetFields}>
+          Reset
+        </button>
 
         <StripeCheckout
           name={`Membership Payment for ${name}`}
