@@ -8,12 +8,16 @@ import "./styles.css";
 function App() {
   const [name, setName] = useState("");
   const [team, setTeam] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(10);
 
   function resetFields() {
-    setAmount(10);
+    setAmount(50);
     setTeam("");
     setName("");
+  }
+
+  function onToken() {
+    console.log("Tokennnnnn");
   }
   return (
     <form className="App">
@@ -28,7 +32,7 @@ function App() {
             value={name}
             token={12345}
             onChange={e => setName(e.target.value)}
-            required
+            //required
           />
         </div>
 
@@ -39,7 +43,7 @@ function App() {
             placeholder="Enter Players Team"
             value={team}
             onChange={e => setTeam(e.target.value)}
-            required
+            //required
           />
         </div>
 
@@ -58,10 +62,14 @@ function App() {
         </button>
 
         <StripeCheckout
-          name={`Membership Payment for ${name}`}
+          type="submit"
+          name={`Lions Membership Payment`}
+          description="Blah"
           image={logo}
           currency="EUR"
           amount={amount * 100}
+          stripeKey="pk_test_Tz2Nlwolw05Hy5PGsB34asWx"
+          token={res => onToken()}
         />
       </fieldset>
     </form>
