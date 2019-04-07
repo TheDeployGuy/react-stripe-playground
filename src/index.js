@@ -63,8 +63,8 @@ function App() {
 
         <StripeCheckout
           type="submit"
-          name={`Lions Membership Payment`}
-          description="Blah"
+          name={`Lions Membership`}
+          description={`Payment for ${name}`}
           image={logo}
           currency="EUR"
           amount={amount * 100}
