@@ -57,20 +57,22 @@ function App() {
           />
         </div>
 
-        <button type="button" onClick={resetFields}>
-          Reset
-        </button>
+        <div className="actions">
+          <button type="button" onClick={resetFields}>
+            Reset
+          </button>
 
-        <StripeCheckout
-          type="submit"
-          name={`Lions Membership`}
-          description={`Payment for ${name}`}
-          image={logo}
-          currency="EUR"
-          amount={amount * 100}
-          stripeKey="pk_test_Tz2Nlwolw05Hy5PGsB34asWx"
-          token={res => onToken()}
-        />
+          <StripeCheckout
+            type="submit"
+            name={`Lions Membership`}
+            description={`Payment for ${name}`}
+            image={logo}
+            currency="EUR"
+            amount={amount * 100}
+            stripeKey="pk_test_Tz2Nlwolw05Hy5PGsB34asWx"
+            token={res => onToken()}
+          />
+        </div>
       </fieldset>
     </form>
   );
